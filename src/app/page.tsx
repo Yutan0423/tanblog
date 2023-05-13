@@ -1,6 +1,9 @@
 
 import { ArticleCard } from "@/components/Article";
+import { REVALIDATE } from "@/constants/revalidate";
 import { getArticles } from "@/services/microcms/article";
+
+export const revalidate = REVALIDATE
 
 export default async function Home() {
   const articles = await getArticles();

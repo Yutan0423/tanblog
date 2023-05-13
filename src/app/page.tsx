@@ -1,21 +1,16 @@
-import { client } from "@/services/microcms/client";
 
-const fetchArticles = async () => {
-  return await client
-    .get({
-      endpoint: "blogs",
-    })
-    .then((res) => res);
-};
+import { ArticleCard } from "@/components/Article";
+import { getArticles } from "@/services/microcms/article";
 
 export default async function Home() {
-  const { contents } = await fetchArticles();
-  console.log(contents)
+  const articles = await getArticles();
   
   return (
     <main className="flex min-h-screen flex-col items-center justify-between px-24 pt-8">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        {contents.map((item: any) => <span key={item.id}>{item.title}</span>)}
+      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm">
+      <div className="grid grid-cols-1 gap-4">
+        {articles.map((content) => <ArticleCard key={content.id} contentId={content.id} title={content.title} thumbnailUrl={content.eyecatch.url} category={content.category.name} createdAt={content.createdAt} />)}
+      </div>
       </div>
     </main>
   );

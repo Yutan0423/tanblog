@@ -10,7 +10,6 @@ const fetchArticles = async () => {
 
 export default async function Home() {
   const { contents } = await fetchArticles();
-  console.log(contents)
   
   return (
     <main className="flex min-h-screen flex-col items-center justify-between px-24 pt-8">

@@ -1,17 +1,17 @@
-import { FC, Fragment } from "react"
-import Footer from "./_internal/Footer"
-import Header from "./_internal/Header"
+import { FC, Fragment } from 'react';
+import Footer from './_internal/Footer';
+import Header from './_internal/Header';
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Layout: FC<Props> = ({ children }) => (
   <Fragment>
-    <Header/>
+    <Header />
     <div>{children}</div>
-    <Footer/>
+    <Footer />
   </Fragment>
-)
+);
 
-export default Layout
+export default Layout;

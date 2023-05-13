@@ -1,20 +1,20 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-type Size = typeof TAILWIND_SIZES_MAP[number]['n']
-type Axis = 'vertical' | 'horizontal'
+type Size = (typeof TAILWIND_SIZES_MAP)[number]['n'];
+type Axis = 'vertical' | 'horizontal';
 
 interface SpacerProps {
-  size: Size
-  axis?: Axis
+  size: Size;
+  axis?: Axis;
 }
 
 const Spacer: FC<SpacerProps> = ({ size, axis }) => {
-  const w = axis === 'vertical' ? 'px' : size
-  const h = axis === 'horizontal' ? 'px' : size
+  const w = axis === 'vertical' ? 'px' : size;
+  const h = axis === 'horizontal' ? 'px' : size;
 
-  const value = TAILWIND_SIZES_MAP.find((item) => item.n === size)?.value
-  const minW = axis === 'horizontal' ? 1 : value
-  const minH = axis === 'horizontal' ? 1 : value
+  const value = TAILWIND_SIZES_MAP.find((item) => item.n === size)?.value;
+  const minW = axis === 'horizontal' ? 1 : value;
+  const minH = axis === 'horizontal' ? 1 : value;
 
   return (
     <span
@@ -24,10 +24,10 @@ const Spacer: FC<SpacerProps> = ({ size, axis }) => {
         minHeight: minH,
       }}
     />
-  )
-}
+  );
+};
 
-export default Spacer
+export default Spacer;
 
 /**
  * Taileind fixed size list
@@ -65,4 +65,4 @@ const TAILWIND_SIZES_MAP = [
   { n: 72, value: '18rem' },
   { n: 80, value: '20rem' },
   { n: 96, value: '24rem' },
-] as const
+] as const;

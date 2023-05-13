@@ -15,11 +15,11 @@ export default async function Home({ params }: Props) {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between px-24 pt-8">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+      <div className="z-10 w-full max-w-5xl font-mono text-sm">
         <ArticleBody content={article?.content || ''} />
+        <Spacer size={16} />
+        <Profile />
       </div>
-      <Spacer size={16} />
-      <Profile />
     </main>
   )
 }

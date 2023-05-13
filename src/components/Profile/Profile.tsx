@@ -5,7 +5,7 @@ import { Spacer } from '../Util/Spacer'
 
 const Profile = () => {
   return (
-    <div className="flex items-center shadow-md rounded-lg py-6 px-12">
+    <div className="flex justify-start items-center border-t-2 px-8 pt-10 py-16 w-full">
       <Image
         src="/icon_me.png"
         alt="icon_me"
@@ -13,7 +13,7 @@ const Profile = () => {
         height={80}
         width={80}
       />
-      <Spacer size={4} />
+      <Spacer size={8} />
       <div>
         <div className="flex items-center">
           <span>たん</span>

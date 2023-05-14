@@ -23,6 +23,7 @@ const Profile = () => {
         <Spacer size={3} />
         <p>Web開発が好き</p>
         <p>Typescript / Next.js / golangなど</p>
+        <p>お仕事(副業)のご相談はTwitterのDMにてお待ちしております</p>
       </div>
     </div>
   );

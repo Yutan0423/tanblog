@@ -1,5 +1,4 @@
 import { ArticleCard } from '@/components/Article';
-import { Spacer } from '@/components/Util/Spacer';
 import { REVALIDATE } from '@/constants/revalidate';
 import { getArticles } from '@/services/microcms/article';
 

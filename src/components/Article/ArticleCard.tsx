@@ -1,8 +1,7 @@
-import React from 'react';
 import { format } from 'date-fns';
 import Image from 'next/image';
-import { Spacer } from '../Util/Spacer';
 import Link from 'next/link';
+import { Spacer } from '../Util/Spacer';
 
 type Props = {
   contentId: string;

@@ -1,15 +1,15 @@
-import { Article } from '@/domains/article';
 import { MicroCMSQueries } from 'microcms-js-sdk';
+import { Article } from '@/domains/article';
 import { client } from './client';
 
 export async function getArticles(queries?: MicroCMSQueries): Promise<Article[]> {
   return await client
-    .get({
+    .get<{ contents: Article[] }>({
       endpoint: 'blogs',
       queries,
     })
     .then((res) => res.contents)
-    .catch((e: any) => {
+    .catch((e) => {
       console.error(e);
       return [];
     });
@@ -26,7 +26,7 @@ export async function getArticle(
       queries,
     })
     .then((res: Article) => res)
-    .catch((e: any) => {
+    .catch((e) => {
       console.error(e);
       return null;
     });
